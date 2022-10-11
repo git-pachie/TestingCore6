@@ -1,0 +1,25 @@
+﻿@model List<WebApplication2.Models.Client.Client>
+
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <td>Client ID</td>
+            <td>Client Name</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.ToList())
+        {
+            <tr>
+                <td>@item.ClientID</td>
+                <td>@item.ClientName</td>
+                <td>
+                    <a asp-action="Update" asp-route-clientid="@item.ClientID" class="btn btn-primary btn-sm">Update</a>
+                
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
